@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 
+
+
 app = Flask(__name__)
 # 3.1.1 基础用法
 
@@ -15,12 +17,24 @@ def index():
 #     return render_template('user.html', name=name)
 @app.route('/user/<name>')
 def user(name):
-    return render_template('user_bootstrap.html', name=name)
+    return render_template('user.html', name=name)
 
-# 3.1.2 变量->占位符->告诉jinjia2模板引擎，这个占位符的值从渲染模板时使用的数据中获取。
-# 3.1.3 控制结构
-# 3.1.4
 
+@app.route('/usertest/<name>')
+def usertest(name):
+    return render_template('user.html', name=name)
+
+
+# Jinjia 可以识别 列表 字典 对象
+# 条件控制语句/渲染一组数据/宏定义
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 bootstrap = Bootstrap(app)
 

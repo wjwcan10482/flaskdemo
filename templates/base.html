@@ -20,9 +20,8 @@
     </div>
 </div>
 {% endblock %}
-{% block content %} <div class="container">
-    <div class="page-header">
-        <h1>Hello, {{ name }}!</h1>
-    </div>
+{% block content %} 
+<div class="container">
+    {% block page_content %}{% endblock %}
 </div>
 {% endblock %}
