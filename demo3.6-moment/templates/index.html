@@ -1,2 +1,9 @@
-<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
-<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+<head>
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
+</head>
+<p>The current date and time is: {{ moment(current_time).format('MMMM Do YYYY, h:mm:ss a') }}.</p>
+<p>Something happened {{ moment(current_time).fromTime(current_time) }}.</p>
+<p>{{ moment(current_time).calendar() }}.</p>
+
+<p>{{ moment.lang("cn") }}</p>
