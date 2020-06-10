@@ -25,5 +25,18 @@ def projects():
 @app.route('/about')
 def about():
     return 'The about page'
-    
+
+@app.route('/greet',defaults={'name':'Programmer'})
+@app.route('/greet/<name>')
+def greet(name):
+    return '<h1>Hello,%s!</h1>' % name
+
 app.run()
+
+
+
+# export FLASK_APP=app
+# set FLASJ_APP=app
+# flask run or python -m flask run  
+# --host=0.0.0.0
+# FLASK_ENV=development,production

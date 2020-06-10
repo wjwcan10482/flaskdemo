@@ -1,6 +1,6 @@
 {
     "emmet.triggerExpansionOnTab": true,
     "files.associations": {"*.js": "html"},
-    "python.pythonPath": "c:\\Users\\wjwca\\Documents\\flaskdemo\\.py3_env\\Scripts\\python.exe",
+    "python.pythonPath": ".py3_env\\Scripts\\python.exe",
     "python.linting.pylintEnabled": true
 }
